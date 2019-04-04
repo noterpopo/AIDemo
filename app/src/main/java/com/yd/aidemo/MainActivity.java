@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton patrol;
+    private ImageButton addData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PatrolActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        addData = findViewById(R.id.add_data);
+        addData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
