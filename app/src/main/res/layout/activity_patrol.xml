@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#87CEFA"
+        tools:context=".PatrolActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+        <ImageView
+                android:id="@+id/back"
+                android:layout_width="20dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/back_white"
+                android:text="设置"
+                android:textColor="@android:color/white"
+                android:textSize="15dp"/>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                android:text="待整改列表"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <include
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="45dp"
+            layout="@layout/content_patrol"/>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            app:srcCompat="@drawable/camera"/>
+
+</android.support.design.widget.CoordinatorLayout>

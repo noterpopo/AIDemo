@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AIDemo</string>
+    <string name="title_activity_patrol">PatrolActivity</string>
 </resources>

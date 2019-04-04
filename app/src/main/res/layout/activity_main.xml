@@ -1,19 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EEEDED"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="220dp"
+            android:background="@drawable/main"
+            tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+            android:id="@+id/control"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:orientation="horizontal">
+
+        <ImageButton
+                android:layout_width="150dp"
+                android:layout_height="79dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/attendance"
+                tools:ignore="MissingConstraints"/>
+
+        <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        <ImageButton
+                android:id="@+id/patrol"
+                android:layout_width="150dp"
+                android:layout_height="79dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/patrol"
+                tools:ignore="MissingConstraints"/>
+
+    </LinearLayout>
+
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_below="@+id/control"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/card"/>
+
+
+
+
+</RelativeLayout>
