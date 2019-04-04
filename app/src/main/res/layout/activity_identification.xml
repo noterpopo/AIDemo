@@ -104,7 +104,12 @@
                         android:textSize="12sp"/>
 
             </LinearLayout>
-
+            <Button
+                android:id="@+id/vcbtn"
+                android:layout_marginTop="140dp"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

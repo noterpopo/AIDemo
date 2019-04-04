@@ -47,7 +47,6 @@ public class ActivityUiDialog extends ActivityAbstractRecog {
                 start();
             }
         });
-        initPermission();
         /**
          * 有2个listner，一个是用户自己的业务逻辑，如MessageStatusRecogListener。另一个是UI对话框的。
          * 使用这个ChainRecogListener把两个listener和并在一起
@@ -110,38 +109,5 @@ public class ActivityUiDialog extends ActivityAbstractRecog {
     protected void onDestroy() {
         super.onDestroy();
         myRecognizer.release();
-    }
-
-    /**
-     * android 6.0 以上需要动态申请权限
-     */
-    private void initPermission() {
-        String[] permissions = {
-                Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.ACCESS_NETWORK_STATE,
-                Manifest.permission.INTERNET,
-                Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-        };
-
-        ArrayList<String> toApplyList = new ArrayList<String>();
-
-        for (String perm : permissions) {
-            if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, perm)) {
-                toApplyList.add(perm);
-                // 进入到这里代表没有权限.
-
-            }
-        }
-        String[] tmpList = new String[toApplyList.size()];
-        if (!toApplyList.isEmpty()) {
-            ActivityCompat.requestPermissions(this, toApplyList.toArray(tmpList), 123);
-        }
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        // 此处为android 6.0以上动态授权的回调，用户自行实现。
     }
 }
