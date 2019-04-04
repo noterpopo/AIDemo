@@ -38,7 +38,7 @@ public class ActivityUiDialog extends ActivityAbstractRecog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.test);
         textView=(TextView)findViewById(R.id.txv);
         button=(Button)findViewById(R.id.strbtn);
         button.setOnClickListener(new View.OnClickListener() {
