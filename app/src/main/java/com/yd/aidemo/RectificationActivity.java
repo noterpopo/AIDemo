@@ -24,9 +24,6 @@ public class RectificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rectification);
-
-        initData();
-
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,26 +36,29 @@ public class RectificationActivity extends AppCompatActivity {
         location = findViewById(R.id.location);
         responsible = findViewById(R.id.responsible);
         responsibleUnit = findViewById(R.id.responsible_unit);
-
-        problem.setText(problemText);
-        location.setText(locationText);
-        responsible.setText(responsibleText);
-        responsibleUnit.setText(responsibleUnitText);
+        initData();
     }
 
 
     private void initData(){
         mResultBean = (ResultBean) getIntent().getSerializableExtra("data");
-        locationText = mResultBean.getProblemPosition().get(0);
-        double factor = -1;
-        for (ProblemBean problemBean : mResultBean.getProblem()) {
-            if (factor <= problemBean.getMatch()){
-                factor = problemBean.getMatch();
-                problemText = problemBean.getName();
+        if (mResultBean != null) {
+            locationText = mResultBean.getProblemPosition().get(0);
+            double factor = -1;
+            for (ProblemBean problemBean : mResultBean.getProblem()) {
+                if (factor <= problemBean.getMatch()) {
+                    factor = problemBean.getMatch();
+                    problemText = problemBean.getName();
+                }
             }
-        }
 
-        responsibleUnitText = mResultBean.getSubcontractingUnit().get(0).getName();
-        responsibleText = mResultBean.getProjectPersonnel().get(0).getName();
+            responsibleUnitText = mResultBean.getSubcontractingUnit().get(0).getName();
+            responsibleText = mResultBean.getProjectPersonnel().get(0).getName();
+
+            problem.setText(problemText);
+            location.setText(locationText);
+            responsible.setText(responsibleText);
+            responsibleUnit.setText(responsibleUnitText);
+        }
     }
 }
